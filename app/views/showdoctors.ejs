@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Doctors</h1>
+    <% doctors.forEach(function(doctor){ %>
+      <ul>
+        <li><%= doctor.name %></li>
+        <li><%= doctor.designation %></li>
+        <li><%= doctor.status %></li>
+      </ul>
+    <% }) %>
+
+  </body>
+</html>

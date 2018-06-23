@@ -1,11 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta charset="utf-8">
+    <title>Hospital Management</title>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <form class="" action="/login" method="post">
+    <table>
+
+      <tr>
+        <td><label>doctor name: </label></td>
+        <td><input type="text" name="dname" value="" autocomplete="off"></td>
+      </tr>
+      <tr>
+        <td><label>password: </label></td>
+        <td><input type="password" name="dpass" value="" autocomplete="off"></td>
+      </tr>
+    </table>
+    <br>
+      <input type="submit" name="Add" value="login">
+    </form>
+    <br>
+    <br>
+    <form class="" action="/register" method="post">
+    <table>
+      <tr>
+       <td><label>doctor name: </label></td>
+       <td><input type="text" name="regestername" value="" autocomplete="off"></td>
+      </tr>
+      <tr>
+       <td><label>designation: </label></td>
+       <td><input type="text" name="designation" value="" autocomplete="off"></td>
+      </tr>
+      <tr>
+       <td><label>status: </label></td>
+       <td><input type="text" name="status" value="" autocomplete="off"></td>
+      </tr>
+      <tr>
+        <td><label>password: </label></td>
+        <td><input type="password" name="regesterpass" value="" autocomplete="off"></td>
+      </tr>
+    </table>
+    <br>
+    <input type="submit" name="Add" value="create account">
+    </form>
+
+  <form class="" action="/showdoctors" method="get">
+    <input type="submit" name="show" value="show doctors">
+  </form>
+
+
+
   </body>
 </html>

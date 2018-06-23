@@ -12,11 +12,13 @@
   },
   "dependencies": {
     "body-parser": "*",
+    "cookie-parser": "^1.4.3",
     "ejs": "^2.6.1",
     "express": "*",
     "express-generator": "^4.16.0",
     "express-validator": "^5.2.0",
-    "mongojs": "^2.6.0"
+    "mongojs": "^2.6.0",
+    "morgan": "^1.9.0"
   },
   "keywords": [
     "hospital",
