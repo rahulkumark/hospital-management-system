@@ -1,0 +1,23 @@
+{
+  "name": "hospitalmngmt",
+  "version": "1.0.0",
+  "description": "A system to record the timings of doctors and when they attend a hospital. Also patients can book appointments with Doctors",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rkwizdev/hospital-management-system.git"
+  },
+  "keywords": [
+    "hospita",
+    "management"
+  ],
+  "author": "Rahul Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rkwizdev/hospital-management-system/issues"
+  },
+  "homepage": "https://github.com/rkwizdev/hospital-management-system#readme"
+}
