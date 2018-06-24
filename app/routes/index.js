@@ -3,7 +3,7 @@ var router = express.Router();
 var mongojs = require('mongojs')
 var db = mongojs('hospitalmanagement', ['doctors']);
 
-
+var app = express();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -21,12 +21,13 @@ router.get('/showdoctors', function(req, res) {
           title: 'hospitalmanagement',
           doctors: docs,
         });
-        // console.log(docs);
+         console.log(docs);
   });
 });
 
 router.get('/home',function (req,res,docs) {
 
+  res.send('Hello from HOMEPAGE');
 
 })
 
@@ -38,24 +39,50 @@ router.post('/login',function (req,res) {
   db.doctors.find(function (err,docs) {
 
     for (var i = 0; i < docs.length ; i++) {
-      if (name == docs.name && pass == docs.password) {
+      if (name == docs[i].name && pass == docs[i].password) {
         res.render('/home');
+        console.log("authentication success");
+      }else {
+        console.log("wrong password");
       }
     }
-     console.log("authentication success");
+
   })
-  // console.log(name,pass);
+
   res.redirect('/');
 
 })
+
 router.post('/register',function (req,res) {
 
-  var regname = req.body.regestername ;
-  var regpass = req.body.regesterpass ;
-  var status = req.body.status;
-  var designation = req.body.designation;
-  console.log(regname,regpass,status,designation);
-  res.redirect('/');
+  // req.checkBody('registername', 'name is required').notEmpty();
+  // req.checkBody('registerpassword', 'password is required').notEmpty();
+  // req.checkBody('designation', 'designation is required').notEmpty();
+
+  //var errors = req.validationErrors();
+
+  // if (error) {
+  //   res.render('index', {
+  //     title: 'customers',
+  //     doctors: docs,
+  //     errors: errors,
+  //   });}else {
+
+  var newdoctor = {
+    name: req.body.rname,
+    password: req.body.rpass,
+    status:req.body.status,
+    designation: req.body.designation,
+  }
+  console.log(req.body.rname,req.body.rpass);
+  db.doctors.insert(newdoctor, function(err, result) {
+    if (err) {} else {
+      res.redirect('/');
+    }
+  });
+//}
+  //console.log(newdoctor);
+
 
 })
 
