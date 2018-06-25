@@ -1,55 +1,72 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Hospital Management</title>
-  </head>
-  <body>
-    <form class="" action="/login" method="post">
-    <table>
 
-      <tr>
-        <td><label>doctor name: </label></td>
-        <td><input type="text" name="dname" value="" autocomplete="off"></td>
-      </tr>
-      <tr>
-        <td><label>password: </label></td>
-        <td><input type="password" name="dpass" value="" autocomplete="off"></td>
-      </tr>
-    </table>
-    <br>
+<head>
+  <meta charset="utf-8">
+  <title>Hospital Management</title>
+</head>
+
+<body>
+  <div class="login">
+    <form class="" action="/login" method="post">
+      <table>
+
+        <tr>
+          <td><label>doctor name: </label></td>
+          <td><input type="text" name="dname" value="" autocomplete="off"></td>
+        </tr>
+        <tr>
+          <td><label>password: </label></td>
+          <td><input type="password" name="dpass" value="" autocomplete="off"></td>
+        </tr>
+      </table>
+      <br>
       <input type="submit" name="Add" value="login">
     </form>
-    <br>
-    <br>
+
+  </div>
+
+  <br>
+  <br>
+  <div class="register">
     <form class="" action="/register" method="post">
-    <table>
-      <tr>
-       <td><label>doctor name: </label></td>
-       <td><input type="text" name="rname" value="" autocomplete="on"></td>
-      </tr>
-      <tr>
-       <td><label>designation: </label></td>
-       <td><input type="text" name="designation" value="" autocomplete="on"></td>
-      </tr>
-      <tr>
-       <td><label>status: </label></td>
-       <td><input type="text" name="status" value="" autocomplete="on"></td>
-      </tr>
-      <tr>
-        <td><label>password: </label></td>
-        <td><input type="password" name="rpass" value="" autocomplete="on"></td>
-      </tr>
-    </table>
-    <br>
-    <input type="submit" name="Add" value="create account">
+      <table>
+        <tr>
+          <td><label>doctor name: </label></td>
+          <td><input type="text" name="rname" value="" autocomplete="on"></td>
+        </tr>
+        <tr>
+          <td><label>designation: </label></td>
+          <td><input type="text" name="designation" value="" autocomplete="on"></td>
+        </tr>
+        <tr>
+          <td><label>status: </label></td>
+          <td><input type="text" name="status" value="" autocomplete="on"></td>
+        </tr>
+        <tr>
+          <td><label>password: </label></td>
+          <td><input type="password" name="rpass" value="" autocomplete="on"></td>
+        </tr>
+      </table>
+      <br>
+      <input type="submit" name="Add" value="create account">
     </form>
+
+  </div>
+
 
   <form class="" action="/showdoctors" method="get">
     <input type="submit" name="show" value="show doctors">
   </form>
 
+  <div class="bookappointment">
+    <form class="" action="/bookappointment" method="get">
+      <input type="submit" name="appointment" value="book appointment">
+    </form>
+
+  </div>
 
 
-  </body>
+</body>
+
 </html>

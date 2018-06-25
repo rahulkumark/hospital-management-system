@@ -3,8 +3,6 @@ var router = express.Router();
 var mongojs = require('mongojs')
 var db = mongojs('hospitalmanagement', ['doctors']);
 
-var app = express();
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
   db.doctors.find(function (err,docs) {
@@ -25,6 +23,8 @@ router.get('/showdoctors', function(req, res) {
   });
 });
 
+
+
 router.get('/home',function (req,res,docs) {
 
   res.send('Hello from HOMEPAGE');
@@ -40,7 +40,7 @@ router.post('/login',function (req,res) {
 
     for (var i = 0; i < docs.length ; i++) {
       if (name == docs[i].name && pass == docs[i].password) {
-        res.render('/home');
+        res.render('home');
         console.log("authentication success");
       }else {
         console.log("wrong password");
@@ -82,8 +82,29 @@ router.post('/register',function (req,res) {
   });
 //}
   //console.log(newdoctor);
+})
 
+router.get('/bookappointment',function (req,res) {
+  res.render('appointment')
+});
+
+router.post('/bookappointment',function (req,res) {
+    var pname = req.body.pname
+    var consultd = req.body.consult
+    var pdisease = req.body.disease
+    var papptime = req.body.apptime
+
+    console.log(req,res);
+
+    console.log(pname,consultd,pdisease,papptime);
+
+    db.doctors.update({designation:consultd}, {$push:{patients:{patientname:pname,consult:consultd,disease:pdisease,apptime:papptime}}},function () {
+
+      console.log("appointment booked")
+    });
 
 })
+
+
 
 module.exports = router;
