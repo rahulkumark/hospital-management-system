@@ -8,7 +8,8 @@ class Navbar extends React.Component{
       borderRadius:'5px',
       padding:'10px',
       marginRight:'40px',
-      float:'right'
+      float:'right',
+      display:'block'
     }
     return(
       <div>

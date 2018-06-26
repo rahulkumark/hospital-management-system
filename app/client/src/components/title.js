@@ -2,7 +2,7 @@ import React from 'react';
 
 const Title = () =>{
   const titleStyle = {
-      backgroundImage: 'radial-gradient(circle, #051937, #382252, #70205c, #a41c51, #c93535)',
+      backgroundImage: 'linear-gradient(to left top,#051937, #382252, #70205c, #a41c51, #c93535)',
       width:'auto',
       height:'90px',
       textAlign:'center',

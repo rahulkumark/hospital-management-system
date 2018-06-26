@@ -1,0 +1,29 @@
+body{
+  background-image: linear-gradient(to right top, #051937, #06172f, #071427, #06101f, #040c18);
+}
+.image{
+  background-image: url('./img1.jpg');
+  background-repeat: no-repeat;
+  background-position:center;
+  background-size:contain;
+  margin: auto;
+  width: 1200px;
+  height: 800px;
+  opacity: 0.5;
+}
+.input_search{
+  margin-top: 80px;
+  text-align: center;
+  font-size: 32px;
+  background-image: radial-gradient(circle, #c0d0e7, #c0d1e8, #c1d1e9, #c1d2ea, #c2d2eb);
+}
+.home_btn{
+  margin-top:100px;
+  padding: auto;
+  width: 250px;
+  height: 250px;
+  font-size: 24px;
+  color: black;
+  background-image: linear-gradient(to right top, #051937, #06172f, #071427, #06101f, #040c18);
+  border-radius: 5px;
+}
